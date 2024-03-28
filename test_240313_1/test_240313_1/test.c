@@ -1,6 +1,6 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include<stdio.h>
-
+#include<string.h>
 //int main()
 //{
 //	int input = 0;
@@ -82,8 +82,33 @@
 //	return 0;
 //}
 
+//int main()
+//{
+//	printf("Test");
+//	return 0;
+//}
+
+//int main() {
+//
+//	char a[10];
+//
+//	char* str = &a;
+//
+//	strcpy(str, "hello\n");
+//
+//	printf(str);
+//
+//	return 0;
+//
+//}
+
 int main()
 {
-	printf("Test");
+	// 0 - 数字0
+	//  '0' - 字符0 - ASCII码是48
+	//  '/0' - 字符 - ASCII码是0
+	// EOF - end of file的缩写，是文件结束的标志 - ASCII码是-1
+	printf("c:\test\121\n"); //最终会输出c:	estQ,其中\t输出为水平制表符，\121输出为Q，各为一个字节。
+	printf("%d\n", strlen("c:\test\121"));
 	return 0;
 }

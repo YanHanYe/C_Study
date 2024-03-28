@@ -1,9 +1,10 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Code\\test_240313_1\\",
+  "WorkspaceRootPath": "C:\\Users\\72760\\Documents\\GitHub\\C_Study\\test_240313_1\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\72760\\Documents\\GitHub\\StudyCodePeriod\\test.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\72760\\Documents\\GitHub\\C_Study\\test_240313_1\\test_240313_1\\test.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:test_240313_1\\test.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -19,13 +20,13 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "test.c",
-              "DocumentMoniker": "C:\\Users\\72760\\Documents\\GitHub\\StudyCodePeriod\\test.c",
-              "RelativeDocumentMoniker": "..\\..\\Users\\72760\\Documents\\GitHub\\StudyCodePeriod\\test.c",
-              "ToolTip": "C:\\Users\\72760\\Documents\\GitHub\\StudyCodePeriod\\test.c",
-              "RelativeToolTip": "..\\..\\Users\\72760\\Documents\\GitHub\\StudyCodePeriod\\test.c",
-              "ViewState": "AQIAAEgAAAAAAAAAAADwv08AAAAGAAAA",
+              "DocumentMoniker": "C:\\Users\\72760\\Documents\\GitHub\\C_Study\\test_240313_1\\test_240313_1\\test.c",
+              "RelativeDocumentMoniker": "test_240313_1\\test.c",
+              "ToolTip": "C:\\Users\\72760\\Documents\\GitHub\\C_Study\\test_240313_1\\test_240313_1\\test.c",
+              "RelativeToolTip": "test_240313_1\\test.c",
+              "ViewState": "AQIAAGYAAAAAAAAAAAAcwG8AAAAhAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
-              "WhenOpened": "2024-03-27T06:47:21.38Z",
+              "WhenOpened": "2024-03-28T14:42:01.971Z",
               "EditorCaption": ""
             }
           ]
