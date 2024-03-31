@@ -418,3 +418,119 @@
 //	}
 //	return 0;
 //}
+
+//int main()
+//{
+//	printf("%c\n", 'a');
+//	printf("%c\n", 97);
+//	return 0;
+//}
+
+//int main()
+//{
+//	int arr[] = { 73, 32, 99, 97, 110, 32, 100, 111, 32, 105, 116, 33 };
+//	int i = 0;
+//	int sz = sizeof(arr) / sizeof(arr[0]);
+//	
+//	while (i < sz)
+//	{
+//		printf("%c", arr[i]);
+//		i++;
+//	}
+//	return 0;
+//}
+
+//int main()
+//{
+//	char str[] = "Hello";
+//	char* p = str;
+//	int n = 10;
+//}
+
+//int main()
+//{
+//	int a[5] = { 1, 2, 3, 4, 5 };
+//	int* ptr = (int*)(&a + 1);
+//	printf("%d, %d", *(a + 1), *(ptr - 1));
+//	return 0;
+//}
+
+//int main() 
+//{
+//	int year = 0;
+//	int month = 0;
+//	int date = 0;
+//	scanf("%4d%2d%2d", &year, &month, &date);
+//	
+//	printf("year=%d\n", year);
+//	printf("month=%02d\n", month);
+//	printf("date=%02d\n", date);
+//	return 0;
+//}
+
+//int main() 
+//{
+//	int id = 0;
+//	float c = 0.0f;
+//	float math = 0.0f;
+//	float eng = 0.0f;
+//	//输入
+//	scanf("%d;%f,%f,%f", &id, &c, &math, &eng);
+//	//输出
+//	printf("The each subject score of No. %d is %.2f, %.2f, %.2f.\n", id, c, math, eng);
+//	return 0;
+//}
+
+//int main()
+//{
+//	int n = printf("Hello world!");
+//	printf("\n%d\n", n);
+//	return 0;
+//}
+
+//int main ()
+//{
+//	printf("printf(\"Hello world!\\n\")");
+//	return 0;
+//}
+
+//int main()
+//{
+//	int arr[4] = { 0 };
+//	//0 1 2 3 
+//	int i = 0;
+//	while (i < 4)
+//	{
+//		scanf("%d", &arr[i]);
+//		i++;
+//	}
+//	//找最大值
+//	int max = arr[0];
+//	i = 1;
+//	while (i < 4)
+//	{
+//		if (arr[i] > max)
+//		{
+//			max = arr[i];
+//		}
+//		i++;
+//	}
+//	printf("%d\n", max);
+//	return 0;
+//}
+
+//int main()
+//{
+//	double r = 0.0;
+//	double v = 0.0;
+//	scanf("%lf", &r);
+//	v = 4 / 3.0 * 3.1415926 * r * r * r;
+//	printf("%.3f\n", v);
+//}
+
+//}
+
+int main()
+{
+
+}
