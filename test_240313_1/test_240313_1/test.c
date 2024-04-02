@@ -1,6 +1,11 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include<stdio.h>
 #include<string.h>
+#include<windows.h>
+#include<stdlib.h>
+#include<time.h>
+#include<math.h>
+
 //int main()
 //{
 //	int input = 0;
@@ -530,7 +535,557 @@
 
 //}
 
+//计算n的阶乘
+// 1*2*3*...*n
+
+//int main()
+//{
+//	int i = 1;
+//	int n = 0;
+//	int ret = 1;
+//	//输入
+//	scanf("%d", &n);
+//	for (i = 1; i <= n; i++)
+//	{
+//		ret = ret * i;
+//	}
+//	//输入
+//	printf("%d的阶乘结果是%d", n, ret);
+//	return 0;
+//}
+
+//计算1!+2!+3!+...+10!
+//自编_1
+//int fac(int x)
+//{
+//	int num = 1;
+//	int ret1 = 1;
+//	for (num = 1; num <= x; num++)
+//	{
+//		ret1 = ret1 * num;
+//	}
+//	return ret1;
+//}
+//
+//int main()
+//{
+//	int i = 0;
+//	int j = 0;
+//	int m = 0;
+//	int ret = 0;
+//	//输入
+//	printf("请输入期望的累加阶数:>");
+//	scanf("%d", &m);
+//	//处理
+//	for (i = 1; i <= m; i++)
+//	{
+//		int c = fac(i);
+//		ret = ret + c;
+//	}
+//	//输出
+//	printf("%d阶的累加阶乘结果为%d", m, ret);
+//	return 0;
+//}
+
+//答案_1
+//int main()
+//{
+//	//初始化
+//	int i = 0;
+//	int n = 0;
+//	int ret = 1;
+//	int sum = 0;
+//	int tem = 0;
+//
+//	//输入
+//	printf("请输入期望的累加阶数:>");
+//	scanf("%d", &tem);
+//
+//	//处理
+//	for (i = 1; i <= tem; i++)
+//	{
+//		for (n = 1; n <= i; n++)
+//		{
+//			ret = ret * n;
+//		}
+//		sum = sum + ret;
+//		ret = 1;
+//	}
+//
+//	//输出
+//	printf("%d阶的累加阶乘结果为%d", tem, sum);
+//
+//	return 0;
+//}
+
+//优化方案
+//1!=1
+//2!=1*2
+//3!=1*2*3
+//每次阶乘都是上阶阶乘结果乘以当前阶乘阶数
+//可以优化算法
+//int main()
+//{
+//	//初始化
+//	int i = 0;
+//	int ret = 1;
+//	int sum = 0;
+//	int temp = 0;
+//	
+//	//输入
+//	printf("请输入期望的累加阶数:>");
+//	scanf("%d", &temp);
+//
+//	//处理
+//	for (i = 1; i <= temp; i++)
+//	{
+//		ret = ret * i;
+//		sum = sum + ret;
+//	}
+//
+//	//输出
+//	printf("%d阶的累加阶乘结果为%d", temp, sum);
+//
+//	return 0;
+//}
+
+//在一个有序数组中查找具体的某个数字n
+//二分查找
+
+//int main()
+//{
+//	//初始化
+//	int arr[] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+//	int k = 0;
+//	int i = 0;
+//	int sz = sizeof(arr) / sizeof(arr[0]);
+//
+//	//输入
+//	printf("请输入要查找的数字:>");
+//	scanf("%d", &k);
+//
+//	//处理+输出
+//	for (i = 0; i < sz; i++)
+//	{
+//		if (arr[i] == k)
+//		{
+//			printf("已找到该数字，下标为:%d\n", i);
+//			break;
+//		}
+//		if (i == sz)
+//		{
+//			printf("在该数组中未找到对应数字\n");
+//		}
+//	}
+//
+//	return 0;
+//}
+
+//#include <stdio.h>
+//
+//int main()
+//{
+//    int arr[] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+//    int k = 0;
+//    int i = 0;
+//    int sz = sizeof(arr) / sizeof(arr[0]);
+//
+//    printf("请输入要查找的数字:>");
+//    scanf("%d", &k);
+//
+//    // 处理+输出
+//    for (i = 0; i < sz; i++)
+//    {
+//        if (arr[i] == k)
+//        {
+//            printf("已找到该数字，下标为:%d\n", i);
+//            break;
+//        }
+//    }
+//
+//    if (i == sz)
+//    {
+//        printf("在该数组中未找到对应数字\n");
+//    }
+//
+//    return 0;
+//}
+
+//int main()
+//{
+//	//初始化
+//	int arr[] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+//	int k = 17;
+//	int i = 0;
+//	int sz = sizeof(arr) / sizeof(arr[0]);
+//	int left = 0;
+//	int right = sz - 1;
+//	while (left <= right)
+//	{
+//		int mid = (left + right) / 2;
+//		if (arr[mid] < k)
+//		{
+//			left = mid + 1;
+//		}
+//		else if (arr[mid] > k)
+//		{
+//			right = mid - 1;
+//		}
+//		else
+//		{
+//			printf("已找到，下标为:%d\n", mid);
+//			break;
+//		}
+//	}
+//	if (left > right)
+//	{
+//		printf("找不到\n");
+//	}
+//
+//
+//
+//	return 0;
+//}
+
+//int main()
+//{
+//	//初始化
+//	char arr1[] = "welcome to bit!!!!";
+//	char arr2[] = "##################";
+//	int left = 0;
+//	int right = strlen(arr2) - 1;
+//	//int right = sizeof(arr1) / sizeof(arr1[0] - 2);
+//	
+//	//处理
+//	while (left <= right)
+//	{
+//		arr2[left] = arr1[left];
+//		arr2[right] = arr1[right];
+//		printf("%s\n", arr2);
+//		Sleep(1000);
+//		//清空屏幕
+//		system("cls");//system是一个库函数，可以执行系统命令
+//		left++;
+//		right--;
+//	}
+//	printf("%s\n", arr2);
+//	return 0;
+//}
+
+//int main()
+//{
+//	int i = 0;
+//	char password[20] = { 0 };
+//	for (i = 0; i < 3; i++)
+//	{
+//		printf("请输入密码:>");
+//		scanf("%s", password);
+//		if (strcmp(password, "abcdef") == 0)
+//		//比较两个字符串是否相等，不能使用==，而应该使用一个库函数：strcmp
+//		//如果返回值是0，表示两个字符串相等
+//		{
+//			printf("登陆成功\n");
+//			break;
+//		}	
+//		else
+//		{
+//			printf("密码错误\n");
+//		}
+//	}
+//	  if (i == 3)
+//	{
+//		  printf("三次密码均输入错误，退出程序\n");
+//	}
+//	return 0;
+//}
+
+//数组传参的时候传递的是数组首元素的地址
+//sizeof 在 64位 是8
+
+//猜数字游戏实现
+//电脑产生一个随机数（1-100）
+//猜数字
+//猜大了
+//猜小了
+
+//void menu()
+//{
+//	printf("******************************\n");
+//	printf("**********  1.play  **********\n");
+//	printf("**********  0.exit  **********\n");
+//	printf("******************************\n");
+//}
+//
+////0-RAND_MAX
+//void game()
+//{
+//	int guess = 0;
+//	RAND_MAX;
+//	//生成随机数
+//	int ret = rand() % 100 + 1;//生成随机数的函数
+//	//printf("%d\n", ret); 
+//	//猜数字
+//	while(1)
+//	{
+//		printf("请猜数字(1-100):>");
+//		scanf("%d", &guess);
+//		if (guess < ret)
+//		{
+//			printf("猜小了\n");
+//		}
+//		else if (guess > ret)
+//		{
+//			printf("猜大了\n");
+//
+//		}
+//		else
+//		{
+//			printf("恭喜你，猜对了\n");
+//			break;
+//		}
+//
+//	}
+//
+//	}
+//  
+//int main()
+//{
+//	int input = 0;
+//	srand((unsigned int)time(NULL));
+//
+//	do
+//	{
+//		menu();
+//		printf("请选择:>");
+//		scanf("%d", &input);
+//		switch (input)
+//		{
+//		case 1:
+//			game();//猜数字的整个逻辑
+//			//printf("猜数字\n");
+//		 	break;
+//		case 0:
+//			printf("退出游戏\n");
+//			break;
+//		default:
+//			printf("选择错误，重新错误!\n");
+//			break;
+//		}
+//	} while (input);
+//	return 0;
+//}
+
+//goto语句 - 多用于深度嵌套跳出
+//关机程序
+//1.电脑运行起来后，1分钟后就关机
+//2.如果输入：我是猪，就取消关机
+
+//int main()
+//{
+//	char input[20] = { 0 };
+//	system("shutdown -s -t 60");
+//again:
+//	printf("请注意，你的电脑在60秒内关机，如果输入：我是猪，就取消关机\n");
+//	scanf("%s", input);
+//	if (strcmp(input, "我是猪") == 0)
+//	{
+//		system("shutdown -a");
+//		printf("输入正确，已取消关机");
+//	}
+//	else
+//	{
+//		goto again;
+//	}
+//	return 0;
+//}
+
+//int main()
+//{
+//	char arr[20] = "hello world";
+//	memset(arr, 'x', 5);
+//	printf("%s\n", arr);
+//	return 0;
+//}
+
+////函数的定义
+//int get_max(int x, int y)
+//{
+//	return(x > y ? x : y);
+//}
+//
+//int main()
+//{
+//	int a = 0;
+//	int b = 0;
+//	scanf("%d, %d", &a, &b);
+//	//调用函数求最大值
+//	int m = get_max(a, b);
+//	printf("%d\n", m);
+//	return 0;
+//}
+
+//写一个函数可以交换两个整型变量的内容
+
+//当实参传递给形参的时候，形参是实参的一份临时拷贝
+//对形参的修改不会影响实参
+//只能通过取地址的方式修改
+//地址唯一性
+//void Swap(int* px, int* py)
+//{
+//	int z = *px;
+//	*px = *py;
+//	*py = z;
+//}
+//
+//int main()
+//{
+//	int a = 0;
+//	int b = 0;
+//	scanf("%d, %d", &a, &b);
+//	//交换
+//	printf("交换前：a=%d b=%d\n", a, b);
+//	//a和b叫实参
+//	Swap(&a, &b);
+//	printf("交换后：a=%d b=%d\n", a, b);
+//	return 0;
+//}
+
+//一个工程中可以有多个.c文件
+//但只能有一个main函数
+//函数调用分为传值调用和传址调用
+//传值调用
+//Swap1(a, b);
+//传址调用
+//Swap1(&a, &b);
+
+//写一个函数判断该数是不是素数
+
+//打印100-200之间的素数
+//素数是只能被1和它本身整除的数
+//int main()
+//{
+//	int i = 0;
+//	for (i = 100; i <= 200; i++)
+//	{
+//		//判断i是否为素数
+//		//是素数就打印
+//		//拿2 - i-1之间的数字去试除i
+//		int flag = 1;
+//		//flag是1，表示是素数
+//		int j = 0;
+//		for (j = 2; j <= i - 1; j++)
+//		{
+//			if (i % j == 0)
+//			{
+//				flag = 0;
+//				break;
+//			}
+//		}
+//		if (flag == 1)
+//		{
+//			printf("%d ", i);
+//		}
+//	}
+//	return 0;
+//}
+
+//算法优化
+//如果一个数不是素数
+//那么它的因数一定有一个小于它的开方值
+//即若a、b为因数，m为该非素数
+//那么一定有 (a or b) <= sqrt(m)
+
+//int main()
+//{
+//	int i = 0;
+//	for (i = 100; i <= 200; i++)
+//	{
+//		//判断i是否为素数
+//		//是素数就打印
+//		//拿2 - i-1之间的数字去试除i
+//		int flag = 1;
+//		//flag是1，表示是素数
+//		int j = 0;
+//		//i - 1改为sqrt(i)
+//		for (j = 2; j <= sqrt(i); j++)
+//		{
+//			if (i % j == 0)
+//			{
+//				flag = 0;
+//				break;
+//			}
+//		}
+//		if (flag == 1)
+//		{
+//			printf("%d ", i);
+//		}
+//	}
+//	return 0;
+//}
+
+//写一个函数
+//判断一个数是不是素数
+
+//int is_prime(int x)
+//{
+//	int i = 0;
+//	//flag为1是为素数
+//	int flag = 1;
+//	for (i = 2; i <= sqrt(x); i++)
+//	{
+//		if (x % i == 0)
+//		{
+//			return 0;
+//
+//			//break不用写
+//			//当return输出后
+//			//该函数即结束
+//			
+//			//break;
+//		}
+//	}
+//	return 1;
+//}
+//
+//int main()
+//{
+//	int i = 0;
+//	int count = 0;
+//	for (i = 101; i <= 200; i += 2)
+//	{
+//		if (is_prime(i))
+//		{
+//			printf("%d ", i);
+//			count++;
+//		}
+//	}
+//	printf("\ncount = %d", count);
+//	return 0;
+//}
+
+//写一个函数判断一年是不是闰年
+//闰年判断的规则
+//1.能被4整除，并且不能被100整除是闰年
+//2.能被400整除是闰年
+//打印1000-2000年之间的闰年
+
 int main()
 {
-
+	int year = 0;
+	for (year = 1000; year <= 2000; year++)
+	{
+		//判断year是不是闰年
+		if (year % 4 == 0)
+		{
+			if (year % 100 != 0)
+			{
+				printf("%d ", year);
+			}
+		}
+		else if (year % 400 == 0)
+		{
+			printf("%d ", year);
+		}
+	}
+	return 0;
 }
