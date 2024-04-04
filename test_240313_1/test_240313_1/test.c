@@ -1069,23 +1069,146 @@
 //2.能被400整除是闰年
 //打印1000-2000年之间的闰年
 
-int main()
-{
-	int year = 0;
-	for (year = 1000; year <= 2000; year++)
-	{
-		//判断year是不是闰年
-		if (year % 4 == 0)
-		{
-			if (year % 100 != 0)
-			{
-				printf("%d ", year);
-			}
-		}
-		else if (year % 400 == 0)
-		{
-			printf("%d ", year);
-		}
-	}
-	return 0;
-}
+//int main()
+//{
+//	int year = 0;
+//	for (year = 1000; year <= 2000; year++)
+//	{
+//		//判断year是不是闰年
+//		if (year % 4 == 0)
+//		{
+//			if (year % 100 != 0)
+//			{
+//				printf("%d ", year);
+//			}
+//		}
+//		else if (year % 400 == 0)
+//		{
+//			printf("%d ", year);
+//		}
+//	}
+//	return 0;
+//}
+
+//int is_leap_year(int y)
+//{
+//	if (((y % 4 == 0) && (y % 100 != 0)) || (y % 400 == 0))
+//		return 1;
+//	else
+//		return 0;
+//}
+//
+//int main()
+//{
+//	int year = 0;
+//	for (year = 1000; year <= 2000; year++)
+//	{
+//		//判断year是不是闰年
+//		if (is_leap_year(year))
+//		{
+//			printf("%d ", year);
+//		}
+//	}
+//	return 0;
+//}
+
+//写一个函数，实现一个整形有序数组的二分查找
+
+//binary_search(int arr[], int k, int sz)
+//{
+//	int left = 0;
+//	int right = sz - 1;
+//
+//	while (left <= right)
+//	{
+//		int mid = left + (right - left) / 2;
+//
+//		if (arr[mid] < k)
+//		{
+//			left = mid + 1;
+//		}
+//		else if (arr[mid] > k)
+//		{
+//			right = mid - 1;
+//		}
+//		else
+//		{
+//			return mid;//找到了返回下标
+//		}
+//	}
+//	return -1;//找不到
+//}
+//
+//int main()
+//{
+//	int arr[] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+//	int k = 7;
+//	int sz = sizeof(arr) / sizeof(arr[0]);
+//	找到了，返回下标
+//	找不到，返回-1
+//	因为arr中有下标为0的内容
+//	int ret = binary_search(arr, k, sz);
+//	if (ret == -1)
+//	{
+//		printf("找不到\n");
+//	}
+//	else
+//	{
+//		printf("找到了，下标是%d\n", ret);
+//	}
+//	return 0;
+//}
+
+//数组传参实际上传递的是数组首元素的地址
+//而不是整个数字
+//所以在函数内部计算一个函数参数部分的元素个数是不靠谱的
+
+//布尔类型
+//bool true false
+
+//写一个函数，每调用一次这个函数，就会将 num 的值增加1
+
+//void Add(int* p)
+//{
+//	(*p)++;
+//}
+//
+//int main()
+//{
+//	int num = 0;
+//	Add(&num);
+//	printf("%d\n", num);
+//	Add(&num);
+//	printf("%d\n", num);
+//	Add(&num);
+//	printf("%d\n", num);
+//	Add(&num);
+//	printf("%d\n", num);
+//	return 0;
+//}
+
+//函数可以嵌套调用，但不能嵌套定义
+
+//链式访问的前提是有返回值
+//即不能是void
+
+//函数不写返回值（不建议）的时候，默认返回类型是int
+
+//int main(void)
+//明确的说明，main函数不需要参数
+
+//main函数有3个参数
+// int main(int argc, char* argv[], char *envp[])
+
+//函数声明不能决定函数是否真实存在
+//函数定义才能决定函数是否存在
+
+ //导入静态库和.h文件可以卖钱
+
+//#pragma comment(lib, "add.lib")
+
+//程序递归
+//程序调用自身的编程技巧称为递归
+
+//%d有符号整数
+//%u无符号整数
