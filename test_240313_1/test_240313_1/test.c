@@ -1212,3 +1212,445 @@
 
 //%d有符号整数
 //%u无符号整数
+
+//int main()
+//{
+//	unsigned int num = 0;
+//	scanf("%u", &num);
+//	while (num)
+//	{
+//		printf("%d ", num % 10);
+//		num = num / 10;
+//	}
+//	return 0;
+
+	//通过递归解决上述问题
+
+//void print(unsigned int n)
+//{
+//	if (n > 9)
+//	{
+//		print(n / 10);
+//	}
+//	printf("%d ", n % 10);
+//}
+//
+//int main()
+//{
+//	unsigned int num = 0;
+//	scanf("%u", &num);
+//	print(num);
+//	
+//	return 0;
+//}
+
+//递归的两个必要条件
+//1.存在限制条件，当满足限制条件时，递归不再继续
+//2.递归调用后越来越接近这个限制条件
+
+//编写函数不允许创建临时变量，求字符串的长度
+
+//char str[] 参数部分写成数组形式
+//char* str 参数部分写成指针的形式
+
+//int my_strlen(char* str)
+//{
+//	int count = 0;
+//	while (*str != '\0')
+//	{
+//		count++;
+//		str++;
+//	}
+//	return count;
+//}
+//
+//int main()
+//{
+//	char arr[] = "abc";
+//	int len = my_strlen(arr);
+//	printf("%d\n", len);
+//	return 0;
+//}
+
+//递归求解上述问题
+
+//int my_strlen(char* str)
+//{
+//	if (*str != '\0')
+//		return 1 + my_strlen(str + 1);
+//	else
+//		return 0;
+//}
+//
+//int main()
+//{
+//	char arr[] = "abc";
+//	int len = my_strlen(arr);
+//	printf("%d\n", len);
+//	return 0;
+//}
+
+//递归实现
+//int fac(int n)
+//{
+//	if (n <= 1)
+//	{
+//		return 1;
+//	}
+//	else
+//		return n * fac(n - 1);
+//}
+
+//迭代的方式-非递归
+//int fac(int n)
+//{
+//	int i = 0;
+//	int ret = 1;
+//	for (i = 1; i <= n; i++)
+//	{
+//		ret *= i;
+//	}
+//	return ret;
+//}
+//
+//
+//int main()
+//{
+//	int n = 0;
+//	scanf("%d", &n);
+//	int ret = fac(n);
+//	printf("ret = %d", ret);
+//	return 0;
+//}
+
+//求第n个斐波那契数
+//斐波那契数列
+//是一个数字序列，其中每个数字是前两个数字的总和，但前两个数字分别为0和1
+
+//int count;
+//不适合用递归，会导致算法拖沓
+//int Fib(int n)
+//{
+//	if (n == 3)
+//	{
+//		count++;
+//	}
+//	if (n <= 2)
+//	{
+//		return 1;
+//	}
+//	else
+//		return Fib(n - 1) + Fib(n - 2);
+//
+//}
+
+//int Fib(int n)
+//{
+//	int a = 1;
+//	int b = 1;
+//	int c = 0;
+//
+//	while (n >= 3)
+//	{
+//		c = a + b;
+//		a = b;
+//		b = c;
+//		n--;
+//	}
+//	return c;
+//}
+//
+//int main()
+//{
+//	int n = 0;
+//	scanf("%d", &n); 
+//	int ret = Fib(n);
+//	printf("%d\n", ret);
+//	//printf("大致计算次数为:>%d", count);
+//	return 0;
+//}
+
+//递归层次太深会溢出
+//char - 也属于整型家族的
+//因为字符存储时，存储的是ASCII值
+
+
+//写代码将三个整数数按从大到小输出
+
+//void Swap(int* px, int* py)
+//{
+//	int tem = *px;
+//	*px = *py;
+//	*py = tem;
+//}
+//
+//int main()
+//{
+//	//初始化
+//	int a = 0;
+//	int b = 0;
+//	int c = 0;
+//	int tem = 0;
+//	
+//	//输入
+//	scanf("%d %d %d", &a, &b, &c);
+//	
+//	//调整
+//	if (a < b)
+//	{
+//		//tem = a;
+//		//a = b;
+//		//b = tem;
+//		Swap(&a, &b);
+//	}
+//	if (a < c)
+//	{
+//		//tem = a;
+//		//a = c;
+//		//c = tem;
+//		Swap(&a, &c);
+//
+//	}
+//	if (b < c)
+//	{
+//		//tem = b;
+//		//b = c;
+//		//c = tem;
+//		Swap(&b, &c);
+//
+//	}
+//	//输出
+//	printf("%d %d %d", a, b, c);
+//
+//	return 0;
+//}
+
+//写一个代码打印1-100直接所有3的倍数的数字
+
+//int main()
+//{
+//	int i = 0;
+//	//for (i = 1; i <= 100; i++)
+//	//{
+//	//	if (i % 3 == 0)
+//	//	{
+//	//		printf("%d ", i);
+//	//	}
+//	//}
+//	for (i = 3; i <= 100; i += 3)
+//	{
+//		printf("%d ", i);
+//	}
+//	return 0;
+//}
+
+//给定两个数，求这两个数的最大公约数
+//暴力求解 - 不够高效
+//int main()
+//{
+//	//初始化
+//	int a = 0;
+//	int b = 0;
+//
+//	//输入
+//	scanf("%d %d", &a, &b);
+//
+//	//处理
+//	int min = (a < b) ? a : b;
+//	int m = min;
+//	while (1)
+//	{
+//		if (a % m == 0 && b % m == 0)
+//		{
+//			break;
+//		}
+//		m--;
+//	}
+//
+//	//输出
+//	printf("输入两数的最大公约数是:>%d", m);
+//	return 0;
+//}
+
+//辗转相除法
+
+//int main()
+//{
+//	//初始化
+//	int a = 0;
+//	int b = 0;
+//	int c = 0;
+//
+//	//输入
+//	scanf("%d %d", &a, &b);
+//
+//	//处理
+//	while (c = a % b)
+//	{
+//		a = b;
+//		b = c;
+//	}
+//
+//	//输出
+//	printf("输入两数的最大公约数是:>%d", b);
+//	return 0;
+//}
+
+//编写程序数一下 1 到 100 的所有整数中出现多少数字9
+// 个位数和十位数
+//int main()
+//{
+//	//初始化
+//	int i = 0;
+//	int count = 0;
+//	//处理
+//	for (i = 1; i <= 100; i++)
+//	{
+//		//判断个位数是否为9
+//		if (i % 10 == 9)
+//		{
+//			count++;
+//		}
+//
+//		//判断十位数是否为9
+//		if (i / 10 == 9)
+//		{
+//			count++;
+//		}
+//	}
+//	printf("%d", count);
+//	return 0;
+//}
+
+//计算1/1-1/2+1/3-1/4+...+1/99-1/100的值，并打印出结果
+//分子总是1
+//分母是1-100
+
+//int main()
+//{
+//	//初始化
+//	int i = 0;
+//	double sum = 0;
+//	int flag = 1;
+//
+//	//处理
+//	for (i = 1; i <= 100; i++)
+//	{
+//		sum = sum + flag * (1.0 / i);
+//		flag = -flag;
+//	}
+//	printf("%lf\n", sum);
+//	return 0;
+//}
+
+//求10个整数中最大值
+
+//int main()
+//{
+	//初始化
+//	int arr[10] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+//
+//	//处理
+//	int max = arr[0];
+//	int i = 0;
+//	for(i = 1; i < 10;i++)
+//		if (arr[i] > max)
+//		{
+//			max = arr[i];
+//		}
+//	printf("%d\n", max);
+//	return 0;
+//}
+
+//在屏幕上输出9*8乘法口诀表
+//1*1
+//2*1 2*2
+//3*1 3*2 3*3
+//...
+
+//int main()
+//{
+//	int i = 0;
+//	//打印9行
+//	for (i = 1; i <= 9; i++)
+//	{
+//		//打印1行
+//		int j = 0;
+//		for (j = 1; j <= i; j++)
+//		{
+//			//%2d - 2位右对齐
+//			//%-2d - 2位左对齐
+//			printf("%d*%d=%-2d ", i, j, i * j);
+//		}
+//		printf("\n");
+//
+//	}
+//	return 0;
+//}
+
+//(v1, v2)是一个实参，而非两个
+//函数应尽可能少的使用全局变量
+//函数的参数不宜过多
+//函数应该高内聚低耦合
+//设计函数时，谁申请的资源谁释放
+
+//一维数组的创建和初始化
+//初始化分为完全初始化和不完全初始化
+//一维、二维等数组在内存中是连续存放的
+//二维数组可以不定义行。但必须定义列数
+//数字下标从0到n-1
+//要正确使用下标，防止数组越界
+
+//冒泡排序
+//两个相邻的元素进行排序
+//把数组的数据排成升序
+//一趟冒泡排序让一个数据来到它最总应该出现的位置上
+
+//数组名本质是：数组首元素的地址 
+
+//形参是数组的形式
+//void bubble_sort(int arr[], int sz)
+//{
+//	//趟数
+//	int i = 0;
+//	for (i = 0; i < sz - 1; i++)
+//	{
+//		//一趟冒泡排序
+//		int j = 0;
+//		for (j = 0; j < sz - 1 - i; j++)
+//		{
+//			if (arr[j] > arr[j + 1])
+//			{
+//				//交换
+//				int tem = arr[j];
+//				arr[j] = arr[j + 1];
+//				arr[j + 1] = tem;
+//			}
+//		}
+//	}
+//}
+//
+//
+//int main()
+//{
+//	int arr[] = { 9, 8, 7, 6, 5, 4, 3, 2, 1, 0 };
+//	int sz = sizeof(arr) / sizeof(arr[0]);
+//
+//	bubble_sort(arr, sz);
+//	int i = 0;
+//	for (i = 0; i < sz; i++)
+//	{
+//		printf("%d ", arr[i]);
+//	}
+//	return 0;
+//}
+
+//数组名确实能表示首元素地址
+//但是又两个例外
+//1.sizeof（数组名），这里的数组名表示整个数组，计算的是整个数组的大小，单位是字节
+//2.&数组名，这里的 数 组名表示整个数组，取出的是整个数组的地址
+
+//求二维数组的行数
+//printf("%d\n", sizeof(arr) / sizeof(arr[0]));
+//求二维数组的列数
+//printf("%d\n", sizeof(arr[0]) / sizeof(arr[0][0]));
